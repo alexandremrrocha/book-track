@@ -5,8 +5,8 @@ import { BookStatus } from '../book-status.enum';
 
 @Entity()
 export class Book {
-  @PrimaryGeneratedColumn('uuid')
-  id: string;
+  @PrimaryGeneratedColumn('increment')
+  id: number;
 
   @Column()
   title: string;
@@ -21,10 +21,7 @@ export class Book {
   status: BookStatus;
 
   @Column({ type: 'int', nullable: true })
-  pages: number;
-
-  @Column({ type: 'int', default: 0 })
-  currentPage: number;
+  pages: number;  
 
   @CreateDateColumn()
   createdAt: Date;

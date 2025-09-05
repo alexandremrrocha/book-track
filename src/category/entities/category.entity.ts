@@ -3,8 +3,8 @@ import { Book } from '../../book/entities/book.entity';
 
 @Entity()
 export class Category {
-  @PrimaryGeneratedColumn('uuid')
-  id: string;
+  @PrimaryGeneratedColumn('increment')
+  id: number;
 
   @Column()
   name: string;
