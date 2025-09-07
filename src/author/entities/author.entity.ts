@@ -9,7 +9,7 @@ export class Author {
   @Column()
   name: string;
 
-  @Column({ type: 'date', nullable: true })
+  @Column({ type: 'date' })
   birthDate: string;
 
   @OneToMany(() => Book, (book) => book.author)

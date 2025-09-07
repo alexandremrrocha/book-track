@@ -26,7 +26,7 @@ export class Book {
   @Column({ type: 'enum', enum: BookStatus, default: BookStatus.TO_READ })
   status: BookStatus;
 
-  @Column({ type: 'int', nullable: true })
+  @Column({ type: 'int' })
   pages: number;  
 
   @CreateDateColumn()

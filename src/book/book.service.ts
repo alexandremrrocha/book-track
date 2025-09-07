@@ -12,10 +12,16 @@ export class BookService {
     private bookRepository: Repository<Book>
   ){}
 
-  create(createBookDto: CreateBookDto) {
-    const book = this.bookRepository.create(createBookDto);
+  async create(createBookDto: CreateBookDto): Promise<Book> {
+    const book = this.bookRepository.create({
+      ...createBookDto,
+      author: { id: createBookDto.authorId },   // conecta o autor
+      category: { id: createBookDto.categoryId } // conecta a categoria
+    });
+
     return this.bookRepository.save(book);
   }
+
 
   findAll() {
     return this.bookRepository.find({relations: ['author', 'category']});

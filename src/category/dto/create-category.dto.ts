@@ -1,6 +1,7 @@
+import { IsNotEmpty } from "class-validator";
 import { Book } from "../../book/entities/book.entity";
 
 export class CreateCategoryDto {
-    name: string;
-    books: Book[];    
+    @IsNotEmpty({ message: 'O nome da categoria é obrigatório' })
+    name: string;   
 }
