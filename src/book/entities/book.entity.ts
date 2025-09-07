@@ -17,6 +17,12 @@ export class Book {
   @ManyToOne(() => Category, (category) => category.books)
   category: Category;
 
+  @Column()
+  authorId: number;
+
+  @Column()
+  categoryId: number;
+
   @Column({ type: 'enum', enum: BookStatus, default: BookStatus.TO_READ })
   status: BookStatus;
 

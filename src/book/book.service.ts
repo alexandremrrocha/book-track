@@ -18,7 +18,7 @@ export class BookService {
   }
 
   findAll() {
-    return this.bookRepository.find();
+    return this.bookRepository.find({relations: ['author', 'category']});
   }
 
   async findOne(id: number) {
