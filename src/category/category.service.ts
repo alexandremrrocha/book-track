@@ -18,7 +18,7 @@ export class CategoryService {
   }
 
   findAll() {
-    return this.categoryRepository.find();
+    return this.categoryRepository.find({order: {name: 'ASC'}});
   }
 
   async findOne(id: number) {

@@ -15,8 +15,8 @@ export class BookService {
   async create(createBookDto: CreateBookDto): Promise<Book> {
     const book = this.bookRepository.create({
       ...createBookDto,
-      author: { id: createBookDto.authorId },   // conecta o autor
-      category: { id: createBookDto.categoryId } // conecta a categoria
+      author: { id: createBookDto.authorId },   
+      category: { id: createBookDto.categoryId } 
     });
 
     return this.bookRepository.save(book);
@@ -24,7 +24,7 @@ export class BookService {
 
 
   findAll() {
-    return this.bookRepository.find({relations: ['author', 'category']});
+    return this.bookRepository.find({relations: ['author', 'category'], order: { title: 'ASC'},});
   }
 
   async findOne(id: number) {

@@ -18,7 +18,7 @@ export class AuthorService {
   }
 
   findAll() {
-    return this.authorRepository.find();
+    return this.authorRepository.find({order: {name: 'ASC'}});
   }
 
   async findOne(id: number) {
