@@ -26,6 +26,7 @@ src/
 ┣ app.module.ts # Módulo raiz
 ┗ main.ts # Ponto de entrada da aplicação
 ```
+---
 
 ## ⚙️ Como rodar o projeto localmente
 
@@ -41,6 +42,7 @@ npm run dev
 ```
 npm run test
 ```
+---
 
 ## 📌 Endpoints principais
 
@@ -49,12 +51,16 @@ npm run test
 - GET /books → Lista todos os livros (com autor e categoria)
 - POST /books → Cadastra um livro
 
+---
+
 ## 📅 Roadmap
 
 - Autenticação com JWT
 - Paginação e filtros avançados em listagens
 - Documentação automática com Swagger
 - Deploy em ambiente de nuvem
+
+---
 
 ## 📜 Licença
 
